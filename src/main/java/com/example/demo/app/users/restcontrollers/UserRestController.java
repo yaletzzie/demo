@@ -20,14 +20,13 @@ public class UserRestController {
     public Integer findById(@PathVariable("id")Integer id)
     {
         return id;
+
     }
 
     @PostMapping
-    public String create(@RequestBody String usuario){
-        return usuario;
+    public User create(@RequestBody User user){
+        return userService.create(user);
     }
-
-
     @GetMapping
     public List<User>findAll(){
         return  userService.findAll();
